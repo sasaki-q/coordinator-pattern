@@ -1,15 +1,7 @@
-//
-//  TableViewController.swift
-//  table
-//
-//  Created by Teppei Sasaki on 2022/07/29.
-//
-
-import Foundation
 import UIKit
 
-class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    @IBOutlet var table:UITableView!
+class TableViewController: UIViewController {
+    @IBOutlet var tableView:UITableView!
     
     private let imgString: String = "image"
     private let dateList: Array<String> = [
@@ -21,27 +13,30 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("DEBUG view didload")
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomTableViewCell")
     }
-    
+}
+
+extension TableViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dateList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = table.dequeueReusableCell(withIdentifier: "custom_cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as! CustomTableViewCell
         
-        let img = UIImage(named: imgString)
-        let imgView = cell.viewWithTag(1) as! UIImageView
-        imgView.image = img
+        cell.imgView?.image = UIImage(named: imgString)
         
         let i = indexPath.row
+        cell.titleLabel?.text = "this task number is \(i)"
+        cell.dateLabel?.text = dateList[i]
         
-        let titleLabel = cell.viewWithTag(2) as! UILabel
-        titleLabel.text = "this task's number is \(i)"
-
-        let dateLabel = cell.viewWithTag(3) as! UILabel
-        dateLabel.text = dateList[indexPath.row]
+        print("================")
+        print(cell)
+        print(cell.titleLabel)
         
         return cell
     }

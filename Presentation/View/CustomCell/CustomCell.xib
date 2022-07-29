@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomCellViewController" customModule="table" customModuleProvider="target">
+            <connections>
+                <outlet property="dateLabel" destination="QvY-ep-s4v" id="hOl-lk-jF1"/>
+                <outlet property="imgView" destination="8YC-fK-LMG" id="O88-C0-7Q0"/>
+                <outlet property="titleLabel" destination="l2D-kX-53n" id="U5k-bq-OkT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="64" id="vV3-tu-NSN">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="custom_cell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vV3-tu-NSN" id="SIJ-YW-Ls8" customClass="CustomCell" customModule="table" customModuleProvider="target">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2D-kX-53n">
+                        <rect key="frame" x="95" y="10" width="140" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QvY-ep-s4v">
+                        <rect key="frame" x="259" y="33" width="145" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="145" id="Wjg-i5-OwB"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8YC-fK-LMG">
+                        <rect key="frame" x="0.0" y="0.0" width="76" height="64"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="l2D-kX-53n" firstAttribute="top" secondItem="SIJ-YW-Ls8" secondAttribute="top" constant="10" id="62X-mF-rTE"/>
+                    <constraint firstAttribute="trailing" secondItem="QvY-ep-s4v" secondAttribute="trailing" constant="10" id="HYK-tV-d4R"/>
+                    <constraint firstItem="l2D-kX-53n" firstAttribute="leading" secondItem="8YC-fK-LMG" secondAttribute="trailing" constant="10" id="V7d-jo-lth"/>
+                    <constraint firstAttribute="bottom" secondItem="QvY-ep-s4v" secondAttribute="bottom" constant="10" id="pb1-6l-bpc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="-113" y="-54"/>
+        </tableViewCell>
+    </objects>
+</document>
