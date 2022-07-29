@@ -34,10 +34,6 @@ extension TableViewController: UITableViewDataSource, UITableViewDelegate {
         cell.titleLabel?.text = "this task number is \(i)"
         cell.dateLabel?.text = dateList[i]
         
-        print("================")
-        print(cell)
-        print(cell.titleLabel)
-        
         return cell
     }
 
