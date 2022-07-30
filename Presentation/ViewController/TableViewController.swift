@@ -3,8 +3,6 @@ import UIKit
 class TableViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
-    var text = "this is"
-    
     private let imgString: String = "image"
     private let dateList: Array<String> = [
         "2022/08/01", "2022/08/02",
