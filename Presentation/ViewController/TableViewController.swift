@@ -1,7 +1,9 @@
 import UIKit
 
 class TableViewController: UIViewController {
-    @IBOutlet var tableView:UITableView!
+    @IBOutlet var tableView: UITableView!
+    
+    var text = "this is"
     
     private let imgString: String = "image"
     private let dateList: Array<String> = [
@@ -10,6 +12,8 @@ class TableViewController: UIViewController {
         "2022/08/05", "2022/08/06",
         "2022/08/07", "2022/08/08",
     ]
+
+    var coordinatorDelegate: TableCoordinatorDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,4 +45,8 @@ extension TableViewController: UITableViewDataSource, UITableViewDelegate {
                        heightForRowAt indexPath: IndexPath) -> CGFloat {
             return 70.0
         }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.coordinatorDelegate?.pushScreen(i: indexPath.row)
+    }
 }
