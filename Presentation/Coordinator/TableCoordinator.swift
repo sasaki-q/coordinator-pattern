@@ -8,6 +8,7 @@ class TableCoordinator: Coordinator {
     private let navigator: UINavigationController
     private var tableViewController: TableViewController?
     
+    
     init(navigator: UINavigationController) {
         self.navigator = navigator
     }
@@ -22,6 +23,8 @@ class TableCoordinator: Coordinator {
 
 extension TableCoordinator: TableCoordinatorDelegate {
     func pushScreen(i: Int) {
-        print("tapped cell index is \(i)")
+        let coordinator = NextViewCoordinator(navigator: self.navigator, index: i)
+        coordinator.start()
+        
     }
 }
